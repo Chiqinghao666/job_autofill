@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>秋招助手</title>
+  <style>
+    body{font:14px system-ui,sans-serif;margin:0;color:#172033;background:#f7f8fa}header,main{padding:16px}header{background:#111827;color:#fff}h1{font-size:17px;margin:0}.hint{font-size:12px;color:#667085;line-height:1.5}.card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:12px;margin:10px 0}.row{display:grid;gap:7px;border-bottom:1px solid #eef0f3;padding:10px 0}.row:last-child{border:0}button,select{font:inherit;padding:8px;border-radius:7px;border:1px solid #cbd5e1;background:#fff}button.primary{background:#111827;color:#fff;border-color:#111827}.actions{display:flex;gap:8px;flex-wrap:wrap}input{box-sizing:border-box;width:100%;padding:9px;border:1px solid #cbd5e1;border-radius:7px}small{color:#667085}code{word-break:break-all}
+  </style>
+</head>
+<body>
+  <header><h1>秋招自动填写</h1></header>
+  <main>
+    <section class="card"><strong id="status">正在连接本机服务…</strong><p class="hint">先在网页点击目标字段，再点下面的本地资料即可填入。新字段需确认一次，之后同站点会自动复用。</p></section>
+    <section id="review"></section>
+    <section class="card"><div class="actions"><button id="refresh">刷新资料</button><button id="clearDomain">清空当前网站映射</button></div><input id="search" placeholder="搜索姓名、学校、实习、奖项…" /></section>
+    <section id="profile" class="card"></section>
+  </main>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

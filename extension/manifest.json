@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "秋招自动填报助手 MVP",
+  "version": "0.8.0",
+  "description": "纯本地保存秋招资料，支持确认后复用的字段映射、快捷填入和重复经历填写。",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "webNavigation",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8765/*",
+    "http://localhost:8765/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "秋招助手"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ]
+}
